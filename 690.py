@@ -11,11 +11,18 @@ class Employee(object):
         self.subordinates = subordinates
 """
 class Solution(object):
+
+    def __traval__(self, dic, id):
+        res = dic[id].importance
+        for child_id in dic[id].subordinates:
+            res += self.__traval__(dic, child_id)
+        return res
+
     def getImportance(self, employees, id):
         """
         :type employees: Employee
         :type id: int
         :rtype: int
         """
-        dic = {item.id: item for item in employees
-               }
+        dic = {item.id: item for item in employees}
+        return self.__traval__(dic, id)
