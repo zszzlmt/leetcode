@@ -17,6 +17,7 @@ class Solution(object):
 
         # res = 0
         # for w in words:
+        #     head = 0
         #     flag = True
         #     l = len(S)
         #     for c in w:
